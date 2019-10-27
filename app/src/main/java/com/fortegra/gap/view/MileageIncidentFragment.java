@@ -1,25 +1,24 @@
-package com.fortegra.gap.ui.main;
-
-import androidx.lifecycle.ViewModelProviders;
+package com.fortegra.gap.view;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.fortegra.gap.R;
+import com.fortegra.gap.viewmodel.MainViewModel;
 
-public class MainFragment extends Fragment {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+
+public class MileageIncidentFragment extends Fragment {
 
     private MainViewModel mViewModel;
 
-    public static MainFragment newInstance() {
-        return new MainFragment();
+    public static MileageIncidentFragment newInstance() {
+        return new MileageIncidentFragment();
     }
 
     @Nullable

@@ -1,4 +1,4 @@
-package com.fortegra.gap.ui.main;
+package com.fortegra.gap.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 
