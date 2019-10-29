@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">GapClaim</string>
     <string name="app_title">Gap Claim</string>
+    <string name="confirm_description">we just need you to confirm the information below and well the email you with link to a web page where you can upload all the documents we need to complete your claim and achieve a settlement as quickly as possible</string>
+    <string name="name">Name</string>
+    <string name="contact_number">Contact number</string>
+    <string name="email">Email</string>
+    <string name="mileage">Mileage</string>
+    <string name="incident_date">Incident date</string>
+    <string name="incident_type">Type of incident</string>
+    <string name="edit_details">Edit details</string>
+    <string name="insures_loss_date">Insurers total loss date</string>
+    <string name="vehicle_financed">Vehicle financed?</string>
+    <string name="settlement_figure_accepted">Settlement figure accepted?</string>
 </resources>
