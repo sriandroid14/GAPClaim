@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">GapClaim</string>
     <string name="app_title">Gap Claim</string>
     <string name="confirm_description">we just need you to confirm the information below and well the email you with link to a web page where you can upload all the documents we need to complete your claim and achieve a settlement as quickly as possible</string>
@@ -12,4 +12,13 @@
     <string name="insures_loss_date">Insurers total loss date</string>
     <string name="vehicle_financed">Vehicle financed?</string>
     <string name="settlement_figure_accepted">Settlement figure accepted?</string>
+    <string name="vehicle_damage" >We are sorry that your vehicle has been damaged.</string>
+    <string name="help_arrange">To help us arrange a repair we need you to provide:</string>
+    <string name="incident_details">1.Details of the incident.</string>
+    <string name="damage_image">2.Images of the damage.</string>
+    <string name="Continue">Continue</string>
+    <string name="damage_image_description">Before submitting your claim please check your terms and conditions to confirm the damage fits with in the size(cms) and limits described. These where supplied when you purchased the products.</string>
+    <string name="tap_continue">Then tap continue</string>
+    <string name="tap_indicate">Please tap to indicate the location of the damage</string>
+    <string name="send_photos">Send Photos</string>
 </resources>

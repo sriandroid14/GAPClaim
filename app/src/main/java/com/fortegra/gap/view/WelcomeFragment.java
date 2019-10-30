@@ -5,17 +5,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.fortegra.gap.R;
 import com.fortegra.gap.viewmodel.MainViewModel;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
+import java.util.Objects;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class WelcomeFragment extends Fragment {
 
     private MainViewModel mViewModel;
+    @BindView(R.id.btnMainContinue)
+    AppCompatButton btnContinue;
 
     public static WelcomeFragment newInstance() {
         return new WelcomeFragment();
@@ -25,7 +33,16 @@ public class WelcomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.confirmation_details_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.main_fragment, container, false);
+        ButterKnife.bind(this, rootView);
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(MileageIncidentFragment.newInstance());
+            }
+        });
+
+        return rootView;
     }
 
     @Override
