@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -24,6 +25,8 @@ public class WelcomeFragment extends Fragment {
     private MainViewModel mViewModel;
     @BindView(R.id.btnMainContinue)
     AppCompatButton btnContinue;
+    @BindView(R.id.tvToolBarTitle)
+    AppCompatTextView toolBarTitle;
 
     public static WelcomeFragment newInstance() {
         return new WelcomeFragment();
@@ -35,10 +38,13 @@ public class WelcomeFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.main_fragment, container, false);
         ButterKnife.bind(this, rootView);
+        if (toolBarTitle != null){
+            toolBarTitle.setText(getString(R.string.app_title));
+        }
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(MileageIncidentFragment.newInstance());
+                ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(AssistanceFragment.newInstance());
             }
         });
 

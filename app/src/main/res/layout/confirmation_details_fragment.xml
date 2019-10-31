@@ -5,9 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="20dp"
+
     tools:context=".view.ConfirmDetailsFragment"
     tools:ignore="RtlSymmetry">
+    <include layout="@layout/toolbar"
+        android:id="@+id/tool_bar"/>
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvConfirmDis"
         android:layout_width="match_parent"
@@ -15,10 +17,10 @@
         android:text="@string/confirm_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
         android:textSize="16sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="@dimen/margin_xl"
+        android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginTop="10dp"/>
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/lnlName"
@@ -28,12 +30,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvConfirmDis"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/name"
             android:layout_weight="0.4"
             android:textSize="16sp"/>
         <androidx.appcompat.widget.AppCompatTextView
@@ -51,9 +53,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlName"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,9 +77,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlContactNumber"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,8 +102,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlEmail"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,9 +125,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlMileage"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,9 +149,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlDate"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -171,9 +173,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlIncidentType"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -197,9 +199,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlEditDetails"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -221,9 +223,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlLossDate"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -233,7 +235,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Yes"
+            android:text="@string/yes"
             android:textColor="@color/black"
             android:layout_weight="0.4"
             android:textSize="16sp"/>
@@ -245,9 +247,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlVF"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -257,7 +259,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No"
+            android:text="@string/no"
             android:textColor="@color/black"
             android:layout_weight="0.4"
             android:textSize="16sp"/>
@@ -269,9 +271,9 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlSFA"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp">
+
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -289,18 +291,19 @@
             android:textSize="16sp"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfirmSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:background="@color/colorAccent"
-        android:text="Submit"
+        android:text="@string/confirm_and_submit"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/lnlEditDetails1"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="@dimen/margin_xl"
+        android:layout_marginEnd="@dimen/margin_xl"
         tools:layout_editor_absoluteX="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

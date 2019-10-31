@@ -5,9 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="20dp"
+
     tools:context=".view.ConfirmDetailsFragment"
     tools:ignore="RtlSymmetry">
+    <include layout="@layout/toolbar"
+        android:id="@+id/tool_bar"/>
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvDipTitle"
         android:layout_width="match_parent"
@@ -15,26 +17,27 @@
         android:text="@string/tap_indicate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
         android:textSize="16sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="@dimen/margin_xl"
+        android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginTop="40dp"/>
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivTap"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="380dp"
         android:src="@drawable/car_parts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDipTitle"
         android:textSize="16sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginStart="@dimen/margin_xl"
+        android:layout_marginEnd="@dimen/margin_xl"
+        android:layout_marginTop="@dimen/margin_l"/>
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDamageImageContinue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
@@ -42,11 +45,11 @@
         android:text="@string/send_photos"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_m"
         app:layout_constraintTop_toBottomOf="@+id/ivTap"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="@dimen/margin_xl"
+        android:layout_marginEnd="@dimen/margin_xl"
         tools:layout_editor_absoluteX="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

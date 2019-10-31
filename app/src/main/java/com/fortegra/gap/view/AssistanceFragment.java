@@ -1,5 +1,8 @@
 package com.fortegra.gap.view;
 
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -14,9 +17,18 @@ import android.view.ViewGroup;
 
 import com.fortegra.gap.R;
 
+import java.util.Objects;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class AssistanceFragment extends Fragment {
-
-
+    @BindView(R.id.btnAstContinue)
+    AppCompatButton btnContinue;
+    @BindView(R.id.tvToolBarTitle)
+    AppCompatTextView toolBarTitle;
+    @BindView(R.id.ivLeftArrow)
+    AppCompatImageView ivBackArrow;
     public static AssistanceFragment newInstance() {
         return new AssistanceFragment();
     }
@@ -24,7 +36,25 @@ public class AssistanceFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.assistance_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.assistance_fragment, container, false);
+        ButterKnife.bind(this,rootView);
+        if (toolBarTitle != null){
+            toolBarTitle.setText(getString(R.string.app_title));
+        }
+
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(MileageIncidentFragment.newInstance());
+            }
+        });
+        ivBackArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(WelcomeFragment.newInstance());
+            }
+        });
+        return rootView;
     }
 
     @Override

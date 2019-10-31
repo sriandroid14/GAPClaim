@@ -5,52 +5,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="20dp"
     tools:context=".view.WelcomeFragment">
-
+    <include layout="@layout/toolbar"
+        android:id="@+id/tool_bar"/>
     <TextView
         android:id="@+id/tvHeadTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to GAP Claims."
+        android:text="@string/welcome_gap_claim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="50dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
+        android:layout_marginLeft="@dimen/margin_xl"
+        android:layout_marginRight="@dimen/margin_xl"
+        android:layout_marginTop="@dimen/margin_xxl"/>
     <TextView
         android:id="@+id/tvMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="we're sorry you're without vehicle at this time"
+        android:text="@string/welcome_no_vehicle_confirm"
         android:textSize="18sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="@dimen/margin_xl"
+        android:layout_marginRight="@dimen/margin_xl"
         app:layout_constraintTop_toBottomOf="@+id/tvHeadTitle"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/margin_l"/>
     <TextView
         android:id="@+id/tvMessage1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="To be able to process your claim quickly and easily we require some documents from you. However ,for thee moments let's stat with some basic questions."
+        android:text="@string/welcome_description"
         android:textSize="16sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="@dimen/margin_xl"
+        android:layout_marginRight="@dimen/margin_xl"
         app:layout_constraintTop_toBottomOf="@+id/tvMessage"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/margin_l"/>
     <TextView
         android:id="@+id/tvMessage2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Then well provide a web link for you to upload the information we need"
+        android:text="@string/welcome_provide_weblink"
         android:textSize="16sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="@dimen/margin_xl"
+        android:layout_marginRight="@dimen/margin_xl"
         app:layout_constraintTop_toBottomOf="@+id/tvMessage1"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/margin_l"/>
 
     <Button
         android:id="@+id/btnMainContinue"
@@ -58,14 +58,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:background="@color/colorAccent"
-        android:text="CONTINUE"
+        android:text="@string/Continue"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="110dp"
         app:layout_constraintTop_toBottomOf="@+id/tvMessage2"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/margin_xl"
+        android:layout_marginLeft="@dimen/margin_xl"
         tools:layout_editor_absoluteX="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
