@@ -58,34 +58,37 @@
         android:orientation="horizontal">
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnToday"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/today"
-        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textSize="14sp"
         android:layout_weight="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvIncidentDate" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnYesterday"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tvIncidentDate"
         app:layout_constraintStart_toEndOf="@+id/btnToday"
         android:layout_marginStart="5dp"
         android:text="@string/yesterday"
-        android:layout_weight="0.35"
+        android:layout_weight="0.3"
         android:textSize="14sp"
+        android:textAllCaps="false"
         tools:ignore="MissingConstraints" />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnWeek"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tvIncidentDate"
         app:layout_constraintStart_toEndOf="@+id/btnYesterday"
         android:layout_marginStart="5dp"
         android:text="@string/one_week"
-        android:textSize="16sp"
+        android:textSize="14sp"
+        android:textAllCaps="false"
         android:layout_weight="0.3"
         tools:ignore="MissingConstraints" />
     </androidx.appcompat.widget.LinearLayoutCompat>
