@@ -20,6 +20,7 @@ import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class IncidentTypeFragment extends Fragment {
 
@@ -30,6 +31,21 @@ public class IncidentTypeFragment extends Fragment {
     AppCompatTextView toolBarTitle;
     @BindView(R.id.ivLeftArrow)
     AppCompatImageView ivBackArrow;
+    @BindView(R.id.btnTheft)
+    AppCompatButton btnTheft;
+    @BindView(R.id.btnFire)
+    AppCompatButton btnFire;
+    @BindView(R.id.btnVandalism)
+    AppCompatButton btnVandalism;
+    @BindView(R.id.btnRoadAccident)
+    AppCompatButton btnRoadAccident;
+    @BindView(R.id.btnFlood)
+    AppCompatButton btnFlood;
+    boolean isTheft = true;
+    boolean isFire = true;
+    boolean isVandalism = true;
+    boolean isRoadAccident = true;
+    boolean isFlood = true;
     public static IncidentTypeFragment newInstance() {
         return new IncidentTypeFragment();
     }
@@ -55,8 +71,81 @@ public class IncidentTypeFragment extends Fragment {
                 ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(MileageIncidentFragment.newInstance());
             }
         });
+
+
         return rootView;
     }
+    @OnClick(R.id.btnTheft)
+    void OnClick1(View view) {
+        btnTheft.setBackground(getResources().getDrawable(R.drawable.border_background_green));
+        btnTheft.setTextColor(getResources().getColor(R.color.lightGreen));
+        btnFire.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFire.setTextColor(getResources().getColor(R.color.black));
+        btnVandalism.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnVandalism.setTextColor(getResources().getColor(R.color.black));
+        btnRoadAccident.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
+        btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFlood.setTextColor(getResources().getColor(R.color.black));
+
+    }
+    @OnClick(R.id.btnFire)
+    void OnClick2(View view) {
+        btnTheft.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnTheft.setTextColor(getResources().getColor(R.color.black));
+        btnFire.setBackground(getResources().getDrawable(R.drawable.border_background_green));
+        btnFire.setTextColor(getResources().getColor(R.color.lightGreen));
+        btnVandalism.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnVandalism.setTextColor(getResources().getColor(R.color.black));
+        btnRoadAccident.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
+        btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFlood.setTextColor(getResources().getColor(R.color.black));
+
+    }
+    @OnClick(R.id.btnVandalism)
+    void OnClick3(View view) {
+        btnTheft.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnTheft.setTextColor(getResources().getColor(R.color.black));
+        btnFire.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFire.setTextColor(getResources().getColor(R.color.black));
+        btnVandalism.setBackground(getResources().getDrawable(R.drawable.border_background_green));
+        btnVandalism.setTextColor(getResources().getColor(R.color.lightGreen));
+        btnRoadAccident.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
+        btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFlood.setTextColor(getResources().getColor(R.color.black));
+
+    }
+    @OnClick(R.id.btnRoadAccident)
+    void OnClick4(View view) {
+        btnTheft.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnTheft.setTextColor(getResources().getColor(R.color.black));
+        btnFire.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFire.setTextColor(getResources().getColor(R.color.black));
+        btnVandalism.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnVandalism.setTextColor(getResources().getColor(R.color.black));
+        btnRoadAccident.setBackground(getResources().getDrawable(R.drawable.border_background_green));
+        btnRoadAccident.setTextColor(getResources().getColor(R.color.lightGreen));
+        btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFlood.setTextColor(getResources().getColor(R.color.black));
+
+    }
+    @OnClick(R.id.btnFlood)
+    void OnClick5(View view) {
+        btnTheft.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnTheft.setTextColor(getResources().getColor(R.color.black));
+        btnFire.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnFire.setTextColor(getResources().getColor(R.color.black));
+        btnVandalism.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnVandalism.setTextColor(getResources().getColor(R.color.black));
+        btnRoadAccident.setBackground(getResources().getDrawable(R.drawable.border_background));
+        btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
+        btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background_green));
+        btnFlood.setTextColor(getResources().getColor(R.color.lightGreen));
+
+    }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

@@ -29,7 +29,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvConfirmDis"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -53,7 +53,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlName"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -77,7 +77,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlContactNumber"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -125,7 +125,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlMileage"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -149,7 +149,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlDate"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -173,7 +173,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlIncidentType"
-
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -199,7 +199,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlEditDetails"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -223,7 +223,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlLossDate"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -247,7 +247,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlVF"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -271,7 +271,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnlSFA"
-
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginStart="@dimen/margin_xl">
         <androidx.appcompat.widget.AppCompatTextView
@@ -294,7 +294,7 @@
         android:id="@+id/btnConfirmSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+
         android:background="@color/colorAccent"
         android:text="@string/confirm_and_submit"
         android:textColor="@color/white"
