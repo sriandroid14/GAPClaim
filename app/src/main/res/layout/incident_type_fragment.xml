@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
@@ -17,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tool_bar"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
         android:layout_marginStart="@dimen/margin_xl"
         android:layout_marginEnd="@dimen/margin_xl"
@@ -26,7 +30,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTheft"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_xl"
+        android:layout_height="@dimen/margin_xll"
         android:layout_marginTop="20dp"
         android:layout_marginStart="@dimen/margin_xl"
         android:layout_marginEnd="@dimen/margin_xl"
@@ -39,7 +43,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFire"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_xl"
+        android:layout_height="@dimen/margin_xll"
         app:layout_constraintTop_toBottomOf="@+id/btnTheft"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/margin_xl"
@@ -52,7 +56,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVandalism"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_xl"
+        android:layout_height="@dimen/margin_xll"
         app:layout_constraintTop_toBottomOf="@+id/btnFire"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/margin_xl"
@@ -64,7 +68,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRoadAccident"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_xl"
+        android:layout_height="@dimen/margin_xll"
         app:layout_constraintTop_toBottomOf="@+id/btnVandalism"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/margin_xl"
@@ -76,7 +80,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFlood"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_xl"
+        android:layout_height="@dimen/margin_xll"
         app:layout_constraintTop_toBottomOf="@+id/btnRoadAccident"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/margin_xl"
@@ -104,3 +108,4 @@
         tools:layout_editor_absoluteX="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
