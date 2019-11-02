@@ -90,7 +90,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_m"
             android:textColor="@color/black"
-            android:text="@string/no"/>
+            android:text="@string/no"
+            />
 
     </RadioGroup>
     <Button

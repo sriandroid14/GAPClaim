@@ -50,7 +50,7 @@
         android:background="@color/lightGray"
         android:text="@string/send_photos"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_marginTop="@dimen/margin_l"
         app:layout_constraintTop_toBottomOf="@+id/ivTap"
         app:layout_constraintBottom_toBottomOf="parent"
