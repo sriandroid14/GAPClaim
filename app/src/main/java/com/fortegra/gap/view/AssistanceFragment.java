@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.fortegra.gap.R;
 
@@ -29,6 +31,11 @@ public class AssistanceFragment extends Fragment {
     AppCompatTextView toolBarTitle;
     @BindView(R.id.ivLeftArrow)
     AppCompatImageView ivBackArrow;
+    @BindView(R.id.rgInsurance)
+    RadioGroup rgInsurance;
+    @BindView(R.id.rgFinance)
+    RadioGroup rgFinance;
+
     public static AssistanceFragment newInstance() {
         return new AssistanceFragment();
     }
@@ -45,6 +52,7 @@ public class AssistanceFragment extends Fragment {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                 setUIValues(v);
                 ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(MileageIncidentFragment.newInstance());
             }
         });
@@ -55,6 +63,20 @@ public class AssistanceFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    private void setUIValues(View v) {
+        int selectedInsuranceId = rgInsurance.getCheckedRadioButtonId();
+        // find the radiobutton by returned id
+        RadioButton insuranceRB = (RadioButton)v. findViewById(selectedInsuranceId);
+        int selectedFinaceId = rgFinance.getCheckedRadioButtonId();
+        // find the radiobutton by returned id
+        RadioButton financeRB = (RadioButton)v. findViewById(selectedFinaceId);
+
+
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setVehicleFinanced(insuranceRB.getText().toString());
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setSettlementAccepted(financeRB.getText().toString());
+
     }
 
     @Override

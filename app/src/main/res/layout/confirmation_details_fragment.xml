@@ -43,6 +43,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="R ashok"
@@ -67,6 +68,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/contactNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="+789798797"
@@ -91,6 +93,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ashok@gamilcom"
@@ -115,6 +118,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mileage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="4268"
@@ -139,6 +143,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/incidentdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="02 oct 2019"
@@ -163,6 +168,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/incidentType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="fire"
@@ -214,6 +220,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insurancedate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="02 oct 2019"
@@ -238,6 +245,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/finace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/yes"
@@ -262,6 +270,7 @@
             android:layout_weight="0.4"
             android:textSize="14sp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/settlement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/no"

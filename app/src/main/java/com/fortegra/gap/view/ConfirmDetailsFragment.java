@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fortegra.gap.R;
+import com.fortegra.gap.model.Claim;
 import com.fortegra.gap.viewmodel.MainViewModel;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,27 @@ public class ConfirmDetailsFragment extends Fragment {
     AppCompatTextView toolBarTitle;
     @BindView(R.id.ivLeftArrow)
     AppCompatImageView ivBackArrow;
+
+    @BindView(R.id.name)
+    AppCompatTextView name;
+    @BindView(R.id.contactNumber)
+    AppCompatTextView contactNumber;
+    @BindView(R.id.email)
+    AppCompatTextView email;
+
+
+    @BindView(R.id.mileage)
+    AppCompatTextView mileage;
+    @BindView(R.id.settlement)
+    AppCompatTextView settlement;
+    @BindView(R.id.incidentdate)
+    AppCompatTextView incidentDate;
+
+    @BindView(R.id.incidentType)
+    AppCompatTextView incidentType;
+    @BindView(R.id.finace)
+    AppCompatTextView finance;
+
     public static ConfirmDetailsFragment newInstance() {
         return new ConfirmDetailsFragment();
     }
@@ -43,6 +65,14 @@ public class ConfirmDetailsFragment extends Fragment {
         if (toolBarTitle != null){
             toolBarTitle.setText(getString(R.string.app_title));
         }
+       Claim claim= ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails();
+        name.setText(claim.getName());
+        contactNumber.setText(claim.getContactNumber());
+        email.setText(claim.getEmail());
+        mileage.setText(claim.getMileage());
+        incidentDate.setText(claim.getIncidentDate());
+        incidentType.setText(claim.getIncidentType());
+        finance.setText(claim.getVehicleFinanced());
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

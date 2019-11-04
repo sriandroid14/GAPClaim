@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -43,6 +44,9 @@ public class MileageIncidentFragment extends Fragment {
     AppCompatEditText edtMonth;
     @BindView(R.id.edtYear)
     AppCompatEditText edtYear;
+    @BindView(R.id.edtMileage)
+    AppCompatEditText edtMileage;
+
 
     public static MileageIncidentFragment newInstance() {
         return new MileageIncidentFragment();
@@ -66,6 +70,7 @@ public class MileageIncidentFragment extends Fragment {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setUiValues();
                 ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(IncidentTypeFragment.newInstance());
             }
         });
@@ -74,6 +79,13 @@ public class MileageIncidentFragment extends Fragment {
 
         return rootView;
     }
+
+    private void setUiValues() {
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setMileage(edtMileage.getText().toString());
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setIncidentDate(new Date().toString());
+
+    }
+
     public void  setDate(){}
     @OnClick(R.id.edtDate)
         void seDate(){

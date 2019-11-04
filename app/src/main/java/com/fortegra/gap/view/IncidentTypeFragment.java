@@ -16,6 +16,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.util.Date;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -46,6 +47,7 @@ public class IncidentTypeFragment extends Fragment {
     boolean isVandalism = true;
     boolean isRoadAccident = true;
     boolean isFlood = true;
+    String incidentType;
     public static IncidentTypeFragment newInstance() {
         return new IncidentTypeFragment();
     }
@@ -68,6 +70,7 @@ public class IncidentTypeFragment extends Fragment {
         ivBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setUiValues();
                 ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(MileageIncidentFragment.newInstance());
             }
         });
@@ -87,6 +90,7 @@ public class IncidentTypeFragment extends Fragment {
         btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
         btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
         btnFlood.setTextColor(getResources().getColor(R.color.black));
+        incidentType="Theft";
 
     }
     @OnClick(R.id.btnFire)
@@ -101,6 +105,7 @@ public class IncidentTypeFragment extends Fragment {
         btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
         btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
         btnFlood.setTextColor(getResources().getColor(R.color.black));
+        incidentType="Fire";
 
     }
     @OnClick(R.id.btnVandalism)
@@ -115,6 +120,7 @@ public class IncidentTypeFragment extends Fragment {
         btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
         btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
         btnFlood.setTextColor(getResources().getColor(R.color.black));
+        incidentType="Vandalism";
 
     }
     @OnClick(R.id.btnRoadAccident)
@@ -129,6 +135,7 @@ public class IncidentTypeFragment extends Fragment {
         btnRoadAccident.setTextColor(getResources().getColor(R.color.lightGreen));
         btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background));
         btnFlood.setTextColor(getResources().getColor(R.color.black));
+        incidentType="Road accident";
 
     }
     @OnClick(R.id.btnFlood)
@@ -143,9 +150,12 @@ public class IncidentTypeFragment extends Fragment {
         btnRoadAccident.setTextColor(getResources().getColor(R.color.black));
         btnFlood.setBackground(getResources().getDrawable(R.drawable.border_background_green));
         btnFlood.setTextColor(getResources().getColor(R.color.lightGreen));
-
+        incidentType="Flood";
     }
 
+    private void setUiValues() {
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setIncidentType(incidentType);
+        }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
