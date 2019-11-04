@@ -46,12 +46,14 @@
         android:orientation="horizontal"
         >
         <RadioButton
+            android:id="@+id/financeYesRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_m"
             android:textColor="@color/black"
             android:text="@string/yes"/>
         <RadioButton
+            android:id="@+id/financeNoRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_m"
@@ -81,12 +83,14 @@
         android:orientation="horizontal"
         >
         <RadioButton
+            android:id="@+id/insuranceYesRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_m"
             android:textColor="@color/black"
             android:text="@string/yes"/>
         <RadioButton
+            android:id="@+id/insuranceNoRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_m"

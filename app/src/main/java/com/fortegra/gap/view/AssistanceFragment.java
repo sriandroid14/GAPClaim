@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.fortegra.gap.R;
 
@@ -52,7 +53,7 @@ public class AssistanceFragment extends Fragment {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 setUIValues(v);
+                 setUIValues(rootView);
                 ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(MileageIncidentFragment.newInstance());
             }
         });
@@ -72,7 +73,6 @@ public class AssistanceFragment extends Fragment {
         int selectedFinaceId = rgFinance.getCheckedRadioButtonId();
         // find the radiobutton by returned id
         RadioButton financeRB = (RadioButton)v. findViewById(selectedFinaceId);
-
 
         ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setVehicleFinanced(insuranceRB.getText().toString());
         ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setSettlementAccepted(financeRB.getText().toString());

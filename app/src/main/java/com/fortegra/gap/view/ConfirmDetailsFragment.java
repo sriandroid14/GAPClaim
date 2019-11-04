@@ -73,6 +73,7 @@ public class ConfirmDetailsFragment extends Fragment {
         incidentDate.setText(claim.getIncidentDate());
         incidentType.setText(claim.getIncidentType());
         finance.setText(claim.getVehicleFinanced());
+        settlement.setText(claim.getSettlementAccepted());
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

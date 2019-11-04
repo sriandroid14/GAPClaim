@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.fortegra.gap.R;
 import com.fortegra.gap.viewmodel.MainViewModel;
@@ -42,11 +43,7 @@ public class IncidentTypeFragment extends Fragment {
     AppCompatButton btnRoadAccident;
     @BindView(R.id.btnFlood)
     AppCompatButton btnFlood;
-    boolean isTheft = true;
-    boolean isFire = true;
-    boolean isVandalism = true;
-    boolean isRoadAccident = true;
-    boolean isFlood = true;
+
     String incidentType;
     public static IncidentTypeFragment newInstance() {
         return new IncidentTypeFragment();
@@ -154,6 +151,7 @@ public class IncidentTypeFragment extends Fragment {
     }
 
     private void setUiValues() {
+        Toast.makeText(getActivity(), incidentType, Toast.LENGTH_SHORT).show();
         ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setIncidentType(incidentType);
         }
 
