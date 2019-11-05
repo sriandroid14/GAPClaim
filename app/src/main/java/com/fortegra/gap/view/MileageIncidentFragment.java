@@ -1,8 +1,8 @@
 package com.fortegra.gap.view;
 
-import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +17,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -29,7 +30,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MileageIncidentFragment extends Fragment {
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+
+public class MileageIncidentFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+    public static String TAG = MileageIncidentFragment.class.getSimpleName();
 
     private MainViewModel mViewModel;
     @BindView(R.id.btnMileageSubmit)
@@ -46,7 +50,7 @@ public class MileageIncidentFragment extends Fragment {
     AppCompatEditText edtYear;
     @BindView(R.id.edtMileage)
     AppCompatEditText edtMileage;
-
+    private String finalDate;
 
     public static MileageIncidentFragment newInstance() {
         return new MileageIncidentFragment();
@@ -57,8 +61,8 @@ public class MileageIncidentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.mileage_incident_fragment, container, false);
-        ButterKnife.bind(this,rootView);
-        if (toolBarTitle != null){
+        ButterKnife.bind(this, rootView);
+        if (toolBarTitle != null) {
             toolBarTitle.setText(getString(R.string.app_title));
         }
         ivBackArrow.setOnClickListener(new View.OnClickListener() {
@@ -74,47 +78,39 @@ public class MileageIncidentFragment extends Fragment {
                 ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(IncidentTypeFragment.newInstance());
             }
         });
-
-
-
         return rootView;
     }
 
     private void setUiValues() {
         ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setMileage(edtMileage.getText().toString());
-        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setIncidentDate(new Date().toString());
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setIncidentDate(finalDate);
 
     }
 
-    public void  setDate(){}
+
     @OnClick(R.id.edtDate)
-        void seDate(){
-            DialogFragment newFragment = new DatePickerFragment();
-            newFragment.show(getFragmentManager(), "datePicker");
-        }
+    void setDate() {
+        DatePiker();
+    }
+    @OnClick(R.id.edtMonth)
+    void setMonth() {
+        DatePiker();
+    }
+    @OnClick(R.id.edtYear)
+    void setYear() {
+        DatePiker();
+    }
 
-        public static class DatePickerFragment extends DialogFragment
-                implements DatePickerDialog.OnDateSetListener {
-
-            @Override
-            public Dialog onCreateDialog(Bundle savedInstanceState) {
-                final Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog dialog = new DatePickerDialog(Objects.requireNonNull(getActivity()), this, year, month, day);
-                dialog.getDatePicker().setMaxDate(c.getTimeInMillis());
-                return  dialog;
-            }
-
-            public void onDateSet(DatePicker view, int year, int month, int day) {
-                //ConverterDate.ConvertDate(year, month + 1, day);
-//                edtDate.setText(day);
-//                edtMonth.setText(month);
-//                edtYear.setText(year);
-            }
-        }
-
+    public void DatePiker() {
+        Calendar now = Calendar.getInstance();
+        DatePickerDialog dpd = DatePickerDialog.newInstance(
+                MileageIncidentFragment.this,
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH)
+        );
+        dpd.show(Objects.requireNonNull(getActivity()).getFragmentManager(), "Datepickerdialog");
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -123,5 +119,22 @@ public class MileageIncidentFragment extends Fragment {
         // TODO: Use the ViewModel
     }
 
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        String inputDate = "" + dayOfMonth + "/" + (++monthOfYear) + "/" + year;
+        SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat outputDateFormat = new SimpleDateFormat("dd MMM yyyy");
+        try {
+            Date date = inputDateFormat.parse(inputDate);
+            finalDate = outputDateFormat.format(date);
+
+        } catch (Exception e) {
+            Log.d(TAG, e.getMessage());
+        }
+        edtDate.setText(String.valueOf(dayOfMonth));
+        edtMonth.setText(String.valueOf(+monthOfYear));
+        edtYear.setText(String.valueOf(year));
+    }
 
 }

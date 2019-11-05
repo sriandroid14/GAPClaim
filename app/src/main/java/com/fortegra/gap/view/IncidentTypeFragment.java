@@ -166,5 +166,4 @@ public class IncidentTypeFragment extends Fragment {
         mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         // TODO: Use the ViewModel
     }
-
 }
