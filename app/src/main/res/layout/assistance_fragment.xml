@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,7 +36,7 @@
         android:layout_marginRight="@dimen/margin_xl"
         app:layout_constraintTop_toBottomOf="@+id/tvDescription"
         android:layout_marginTop="30dp"/>
-    <RadioGroup
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/rgFinance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,14 +45,15 @@
         android:layout_marginStart="@dimen/margin_xl"
         android:orientation="horizontal"
         >
-        <RadioButton
+
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/financeYesRb"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="18dp"
             android:layout_marginEnd="@dimen/margin_m"
-            android:textColor="@color/black"
-            android:text="@string/yes"/>
-        <RadioButton
+            android:text="@string/yes"
+            android:textColor="@color/black" />
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/financeNoRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,7 +62,7 @@
             android:checked="true"
             android:text="@string/no"/>
 
-    </RadioGroup>
+    </androidx.appcompat.widget.LinearLayoutCompat>
     <TextView
         android:id="@+id/tvInsurance"
         android:layout_width="match_parent"
@@ -73,7 +74,7 @@
         android:layout_marginRight="@dimen/margin_xl"
         app:layout_constraintTop_toBottomOf="@+id/rgFinance"
         android:layout_marginTop="30dp"/>
-    <RadioGroup
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/rgInsurance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,14 +83,14 @@
         android:layout_marginStart="@dimen/margin_xl"
         android:orientation="horizontal"
         >
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/insuranceYesRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_m"
             android:textColor="@color/black"
             android:text="@string/yes"/>
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/insuranceNoRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,7 +100,7 @@
             android:text="@string/no"
             />
 
-    </RadioGroup>
+    </androidx.appcompat.widget.LinearLayoutCompat>
     <Button
         android:id="@+id/btnAstContinue"
         android:layout_width="match_parent"

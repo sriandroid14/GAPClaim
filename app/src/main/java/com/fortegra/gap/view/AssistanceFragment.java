@@ -1,6 +1,7 @@
 package com.fortegra.gap.view;
 
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.lifecycle.ViewModelProviders;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -32,10 +34,16 @@ public class AssistanceFragment extends Fragment {
     AppCompatTextView toolBarTitle;
     @BindView(R.id.ivLeftArrow)
     AppCompatImageView ivBackArrow;
-    @BindView(R.id.rgInsurance)
-    RadioGroup rgInsurance;
-    @BindView(R.id.rgFinance)
-    RadioGroup rgFinance;
+    @BindView(R.id.insuranceYesRB)
+    AppCompatCheckBox insuranceYesCheckBox;
+    @BindView(R.id.insuranceNoRB)
+    AppCompatCheckBox insuranceNoCheckBox;
+    @BindView(R.id.financeYesRb)
+    AppCompatCheckBox financeYesCheckBox;
+    @BindView(R.id.financeNoRb)
+    AppCompatCheckBox financeNoCheckBox;
+    private String insurance="No";
+    private String finance="No";
 
     public static AssistanceFragment newInstance() {
         return new AssistanceFragment();
@@ -63,19 +71,49 @@ public class AssistanceFragment extends Fragment {
                 ((MainActivity) Objects.requireNonNull(getActivity())).changeFragment(WelcomeFragment.newInstance());
             }
         });
+        insuranceYesCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    insuranceNoCheckBox.setChecked(false);
+                    insurance = "Yes";
+                }
+            }
+        });
+        insuranceNoCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    insuranceYesCheckBox.setChecked(false);
+                    insurance = "No";
+                }
+            }
+        });
+        financeNoCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    financeYesCheckBox.setChecked(false);
+                    finance = "No";
+                }
+            }
+        });
+        financeYesCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    financeNoCheckBox.setChecked(false);
+                    finance = "Yes";
+                }
+            }
+        });
         return rootView;
     }
 
     private void setUIValues(View v) {
-        int selectedInsuranceId = rgInsurance.getCheckedRadioButtonId();
-        // find the radiobutton by returned id
-        RadioButton insuranceRB = (RadioButton)v. findViewById(selectedInsuranceId);
-        int selectedFinaceId = rgFinance.getCheckedRadioButtonId();
-        // find the radiobutton by returned id
-        RadioButton financeRB = (RadioButton)v. findViewById(selectedFinaceId);
 
-        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setVehicleFinanced(insuranceRB.getText().toString());
-        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setSettlementAccepted(financeRB.getText().toString());
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setVehicleFinanced(finance);
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setSettlementAccepted(insurance);
 
     }
 

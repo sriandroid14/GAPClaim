@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
@@ -44,12 +45,14 @@ public class MileageIncidentFragment extends Fragment implements DatePickerDialo
     AppCompatImageView ivBackArrow;
     @BindView(R.id.edtDate)
     AppCompatEditText edtDate;
-    @BindView(R.id.edtMonth)
-    AppCompatEditText edtMonth;
-    @BindView(R.id.edtYear)
-    AppCompatEditText edtYear;
     @BindView(R.id.edtMileage)
     AppCompatEditText edtMileage;
+    @BindView(R.id.btnToday)
+    AppCompatButton btnToday;
+    @BindView(R.id.btnYesterday)
+    AppCompatButton btnYesterDay;
+    @BindView(R.id.btnWeek)
+    AppCompatButton btnWeek;
     private String finalDate;
 
     public static MileageIncidentFragment newInstance() {
@@ -83,23 +86,40 @@ public class MileageIncidentFragment extends Fragment implements DatePickerDialo
 
     private void setUiValues() {
         ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setMileage(edtMileage.getText().toString());
-        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setIncidentDate(finalDate);
+        ((MainActivity) Objects.requireNonNull(getActivity())).getClaimDetails().setIncidentDate(edtDate.getText().toString());
 
     }
 
 
-    @OnClick(R.id.edtDate)
+    @OnClick(R.id.imgDate)
     void setDate() {
         DatePiker();
     }
-    @OnClick(R.id.edtMonth)
-    void setMonth() {
-        DatePiker();
+    @OnClick(R.id.btnToday)
+    void setTodayDate() {
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd MMM yyyy");
+        String formattedDate = df.format(c);
+        edtDate.setText(formattedDate);
     }
-    @OnClick(R.id.edtYear)
-    void setYear() {
-        DatePiker();
+    @OnClick(R.id.btnYesterday)
+    void setYesterdayDate() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        SimpleDateFormat df = new SimpleDateFormat("dd MMM yyyy");
+        String formattedDate = df.format(cal.getTime());
+        edtDate.setText(formattedDate);
+
     }
+    @OnClick(R.id.btnWeek)
+    void setWeekDate() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -7);
+        SimpleDateFormat df = new SimpleDateFormat("dd MMM yyyy");
+        String formattedDate = df.format(cal.getTime());
+        edtDate.setText(formattedDate);
+    }
+
 
     public void DatePiker() {
         Calendar now = Calendar.getInstance();
@@ -132,9 +152,7 @@ public class MileageIncidentFragment extends Fragment implements DatePickerDialo
         } catch (Exception e) {
             Log.d(TAG, e.getMessage());
         }
-        edtDate.setText(String.valueOf(dayOfMonth));
-        edtMonth.setText(String.valueOf(+monthOfYear));
-        edtYear.setText(String.valueOf(year));
+        edtDate.setText(finalDate);
     }
 
 }
